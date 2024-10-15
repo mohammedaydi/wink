@@ -1,0 +1,220 @@
+.header {
+  background: url("../assets/heading.png");
+  background-position: center;
+  background-size: cover;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-cards {
+  flex: 2;
+  height: 60vh;
+  min-height: 520px;
+  position: relative;
+}
+
+.header-desc {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 2rem 2rem 10rem 2rem;
+}
+
+.header-desc h1 {
+  background: linear-gradient(
+    45deg,
+    var(--blue) 20%,
+    var(--pink) 70%,
+    var(--yellow) 80%
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.header-desc h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card a:link {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem 0.2rem;
+  align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 240px;
+
+  border-radius: 20px;
+  box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(25deg, var(--blue) 50%, #ffc0de 80%, #f1e964 90%);
+  border: 2px var(--blue) solid;
+  gap: 2rem;
+}
+
+.card i {
+  font-size: 3rem;
+  color: white;
+}
+
+#card1 {
+  /* background-color: orange; */
+
+  top: 12%;
+  right: var(--ref);
+}
+
+#card2 {
+  /* background-color: red; */
+  top: 30%;
+  right: calc(var(--ref) - 150px);
+  transform: rotate(20deg);
+}
+
+#card3 {
+  /* background-color: cyan; */
+  top: 30%;
+  right: calc(var(--ref) + 150px);
+  transform: rotate(-20deg);
+}
+
+#card4 {
+  /* background-color: green; */
+  top: 45%;
+  right: var(--ref);
+}
+
+@media only screen and (max-width: 1530px) {
+  :root {
+    --ref: 350px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  :root {
+    --ref: 300px;
+  }
+
+  .card {
+    width: 140px;
+    height: 200px;
+    font-size: 0.9rem;
+  }
+
+  #card1 {
+    top: 15%;
+    right: var(--ref);
+  }
+
+  #card2 {
+    top: 30%;
+    right: calc(var(--ref) - 120px);
+    transform: rotate(20deg);
+  }
+
+  #card3 {
+    top: 30%;
+    right: calc(var(--ref) + 120px);
+    transform: rotate(-20deg);
+  }
+
+  #card4 {
+    top: 45%;
+    right: var(--ref);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  :root {
+    --ref: 200px;
+  }
+}
+
+@media only screen and (max-width: 1167px) {
+  :root {
+    --ref: 0px;
+  }
+
+  .header-desc {
+    padding-bottom: 2rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .header-cards {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: unset;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card {
+    position: static;
+    width: 50vw;
+    height: 50px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1rem;
+    background: linear-gradient(
+      25deg,
+      var(--blue) 50%,
+      #ffc0de 80%,
+      #f1e964 90%
+    );
+    border: 2px var(--blue) solid;
+  }
+
+  #card2 {
+    transform: rotate(0deg);
+  }
+
+  #card3 {
+    transform: rotate(0deg);
+  }
+}
+@media only screen and (max-width: 660px) {
+  :root {
+    --ref: 0px;
+  }
+
+  .header {
+    align-items: center;
+  }
+
+  .header-cards {
+    padding: 1rem 0rem;
+  }
+
+  .card {
+    width: 70vw;
+  }
+}

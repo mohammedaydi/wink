@@ -1,0 +1,18 @@
+:root {
+  --white: #eee;
+  --blue: #1ddbf0;
+  --light-green: #1df0b7;
+  --ref: 400px;
+  --pink: #ffc0de;
+  --yellow: #f1e964;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "open sans";
+}
+
+body {
+  background-color: var(--white);
+}
