@@ -13,5 +13,28 @@ const showItems = async (event) => {
   renderItems(rndr);
 };
 
+const searchTitle = async () => {
+  const searchTerm = document.getElementById("title").value;
+  const products = await fetchProducts();
+  const rndr = products.filter((product) => {
+    return product.title === searchTerm;
+  });
+  renderItems(rndr);
+};
+
+const searchCategory = async (event) => {
+  const products = await fetchProducts();
+  if (event.target.value === "all") {
+    renderItems(products);
+  }
+  const rndr = products.filter((product) => {
+    return product.category === event.target.value;
+  });
+
+  renderItems(rndr);
+};
+
 window.toggleDesc = toggleDesc;
 window.showItems = showItems;
+window.searchTitle = searchTitle;
+window.searchCategory = searchCategory;

@@ -7,6 +7,7 @@
     <title>wink</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="./assets/cart.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
@@ -20,10 +21,12 @@
     <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/items.css" />
     <link rel="stylesheet" type="text/css" href="./styles/item.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/filter.css" />
     <script type="module" src="./js/components/Navbar.js"></script>
     <script type="module" src="./js/components/Header.js"></script>
     <script type="module" src="./js/components/Item.js"></script>
     <script type="module" src="./js/handlers.js"></script>
+    <script type="module" src="./js/components/Filter.js"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -31,6 +34,7 @@
       renderNavbar();
       renderHeader();
       initialRender();
+      renderFilter();
     </script>
   </body>
 </html>

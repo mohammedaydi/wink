@@ -1,0 +1,80 @@
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+  gap: 2rem;
+  width: 70vw;
+  border-radius: 10px;
+  position: relative;
+}
+
+.filter-box::before {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    45deg,
+    var(--blue) 20%,
+    var(--pink) 70%,
+    var(--yellow) 90%
+  );
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: " ";
+  border-radius: 10px 10px 0px 0px;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.filter-box input {
+  border-radius: 20px 0px 0px 20px;
+  padding: 0.5rem 1rem;
+  width: 30vw;
+  border: 1px black solid;
+  border-width: 1px 0px 1px 1px;
+}
+
+.filter-box button {
+  border-radius: 0px 20px 20px 0px;
+  padding: 0.5rem 1rem;
+  border: 1px black solid;
+  border-width: 1px 1px 1px 0px;
+  cursor: pointer;
+  background: linear-gradient(
+    45deg,
+    var(--blue) 20%,
+    var(--pink) 50%,
+    var(--yellow) 90%
+  );
+}
+
+.filter-box input:focus {
+  animation: wider 300ms linear;
+  width: 40vw;
+  outline: none;
+}
+
+.filter-box select {
+  padding: 0.5rem 0.5rem;
+  width: 20vw;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filter-box select:focus {
+  outline: none;
+}
+
+@keyframes wider {
+  from {
+    width: 30vw;
+  }
+  to {
+    width: 40vw;
+  }
+}
