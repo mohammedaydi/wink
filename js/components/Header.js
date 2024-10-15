@@ -1,21 +1,19 @@
+class Card {
+  constructor(name, id, logo = "") {
+    this.category = name;
+    this.id = id;
+    this.logo = logo;
+  }
+  htmlToken() {
+    const token = `<div class="card" id="card${this.id}">
+            <a href="#itms")"><p id="${this.category}" onClick="showItems(event)">${this.category}</p></a>
+            ${this.logo}
+          </div>`;
+    return token;
+  }
+}
 const headerToken = `<header class="header">
-        <div class="header-cards">
-          <a href=""><div class="card" id="card1">
-            <p>Electronics</p>
-            <i class="fa-solid fa-laptop"></i>
-          </div></a>
-          <a href=""><div class="card" id="card2">
-            <p>Jewelery</p>
-            <i class="fa-solid fa-gem"></i>
-          </div></a>
-          <a href=""><div class="card" id="card3">
-            <p>Men's clothing</p>
-            <i class="fa-solid fa-user-tie"></i>
-          </div></a>
-          <a href=""><div class="card" id="card4">
-            <p>Women's clothing</p>
-            <i class="fa-solid fa-shirt"></i>
-          </div></a>
+        <div class="header-cards" id="headerCards">
         </div>
         <div class="header-desc">
           <h1>wink</h1>
@@ -29,8 +27,24 @@ const headerToken = `<header class="header">
         </div>
       </header>`;
 
-const renderHeader = () => {
+const renderHeader = async () => {
   document.getElementById("root").innerHTML += headerToken;
+  //fetching the categories to render only 4 of them
+  let categories = await fetchCategories();
+  let logos = [
+    '<i class="fa-solid fa-laptop"></i>',
+    '<i class="fa-solid fa-gem"></i>',
+    '<i class="fa-solid fa-user-tie"></i>',
+    '<i class="fa-solid fa-shirt"></i>',
+  ];
+
+  for (var i = 0; i < 4; i += 1) {
+    document.getElementById("headerCards").innerHTML += new Card(
+      categories[i],
+      i + 1,
+      logos[i]
+    ).htmlToken();
+  }
 };
 
 window.renderHeader = renderHeader;

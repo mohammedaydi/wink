@@ -8,12 +8,14 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .header-cards {
   flex: 2;
   height: 60vh;
   min-height: 520px;
   position: relative;
 }
+
 .header-desc {
   flex: 1.5;
   display: flex;
@@ -23,6 +25,7 @@
 
   padding: 2rem 2rem 10rem 2rem;
 }
+
 .header-desc h1 {
   background: linear-gradient(
     45deg,
@@ -37,6 +40,7 @@
   font-size: 4rem;
   margin-bottom: 1rem;
 }
+
 .header-desc h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -51,6 +55,7 @@ a {
 .card a:link {
   text-decoration: none;
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -67,61 +72,73 @@ a {
   border: 2px var(--blue) solid;
   gap: 2rem;
 }
+
 .card i {
   font-size: 3rem;
   color: white;
 }
+
 #card1 {
   /* background-color: orange; */
 
   top: 12%;
   right: var(--ref);
 }
+
 #card2 {
   /* background-color: red; */
   top: 30%;
   right: calc(var(--ref) - 150px);
   transform: rotate(20deg);
 }
+
 #card3 {
   /* background-color: cyan; */
   top: 30%;
   right: calc(var(--ref) + 150px);
   transform: rotate(-20deg);
 }
+
 #card4 {
   /* background-color: green; */
   top: 45%;
   right: var(--ref);
 }
+
 @media only screen and (max-width: 1530px) {
   :root {
     --ref: 350px;
   }
 }
+
 @media only screen and (max-width: 1400px) {
   :root {
     --ref: 300px;
   }
+
   .card {
     width: 140px;
     height: 200px;
     font-size: 0.9rem;
   }
+
   #card1 {
     top: 15%;
     right: var(--ref);
   }
+
   #card2 {
     top: 30%;
     right: calc(var(--ref) - 120px);
     transform: rotate(20deg);
   }
+
   #card3 {
     top: 30%;
     right: calc(var(--ref) + 120px);
     transform: rotate(-20deg);
   }
+
   #card4 {
     top: 45%;
     right: var(--ref);
@@ -132,18 +149,22 @@ a {
     --ref: 200px;
   }
 }
+
 @media only screen and (max-width: 1167px) {
   :root {
     --ref: 0px;
   }
+
   .header-desc {
     padding-bottom: 2rem;
   }
+
   .header {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
+
   .header-cards {
     padding: 1rem 2rem;
     display: flex;
@@ -154,6 +175,7 @@ a {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
   .card {
     position: static;
     width: 50vw;
@@ -170,9 +192,11 @@ a {
     );
     border: 2px var(--blue) solid;
   }
+
   #card2 {
     transform: rotate(0deg);
   }
+
   #card3 {
     transform: rotate(0deg);
   }
@@ -181,12 +205,15 @@ a {
   :root {
     --ref: 0px;
   }
+
   .header {
     align-items: center;
   }
+
   .header-cards {
     padding: 1rem 0rem;
   }
+
   .card {
     width: 70vw;
   }

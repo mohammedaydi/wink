@@ -37,21 +37,48 @@ class Item {
     return s;
   }
 }
+const itemsToken = `<div class="items-list">
+<div class="filter-box"></div>
+<div class="items-box" id="itms">
+</div>`;
 
-const mapItems = async () => {
+const initialItems = async () => {
   let products = await fetchProducts();
+
   products.forEach((product) => {
     items.push(new Item(product));
   });
-  const itemsToken = `<div class="items-list">
-        <div class="filter-box"></div>
-        <div class="items-box" id="itms">
-      </div>`;
+  return items;
+};
+const mapItems = (products) => {
+  items = [];
+  products.forEach((product) => {
+    items.push(new Item(product));
+  });
+  return items;
+};
+
+const initialRender = async () => {
   document.getElementById("root").innerHTML += itemsToken;
+  document.getElementById("itms").innerHTML = "";
+  const items = await initialItems();
+
   for (var i = 0; i < items.length; i += 1) {
     document.getElementById("itms").innerHTML += items[i].htmlToken();
   }
 };
 
-window.mapItems = mapItems;
-export default mapItems;
+const renderItems = (renderedProducts) => {
+  const renderedItems = mapItems(renderedProducts);
+
+  document.getElementById("itms").innerHTML = "";
+  for (var i = 0; i < renderedItems.length; i += 1) {
+    document.getElementById("itms").innerHTML += renderedItems[i].htmlToken();
+  }
+};
+
+window.initialItems = initialItems;
+window.renderItems = renderItems;
+window.initialRender = initialRender;
+
+export { initialItems, renderItems, initialRender };
