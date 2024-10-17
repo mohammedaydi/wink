@@ -24,7 +24,7 @@ class Item {
               </div>
               <div class="item-price">
                 <div><h2>${this.product.price}$</h2></div>
-                <div><button type="button" id="${this.product.id}">Add to Cart</button></div>
+                <div><button type="button" onClick="addToCart(event)" id="${this.product.id}">Add to Cart</button></div>
               </div>
             </div>
             <div class="item-details__description" id="${this.product.id}Desc">

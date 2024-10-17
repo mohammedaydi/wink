@@ -4,7 +4,7 @@ const navbarToken = `<div class="navbar">
           <a href=""><p>Home</p></a>
           <a href=""><p>Products</p></a>
           <a href=""><p>Login</p></a>
-          <a href=""><p>Cart</p></a>
+          <i class="fa-solid fa-cart-shopping" onClick="showCart()"></i>
         </div>
       </div>`;
 
