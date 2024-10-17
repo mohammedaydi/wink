@@ -78,3 +78,24 @@
     width: 40vw;
   }
 }
+
+@media only screen and (max-width: 440px) {
+  .filter-box {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+    gap: 2rem;
+    width: 70vw;
+    border-radius: 10px;
+    position: relative;
+  }
+  .filter-box input {
+    width: 50vw;
+  }
+  .filter-box select {
+    width: 40vw;
+  }
+}

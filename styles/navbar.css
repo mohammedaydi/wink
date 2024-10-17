@@ -24,9 +24,14 @@
   align-items: center;
 }
 
-.navbar-links a {
+.navbar-links a,
+i {
   text-decoration: none;
   color: white;
+  cursor: pointer;
+}
+.navbar-links i {
+  font-size: 1.5rem;
 }
 
 .navbar-links a:link {
