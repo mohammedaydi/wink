@@ -38,7 +38,7 @@ class Item {
   }
 }
 const itemsToken = `<div class="items-list">
-<div class="filter-box"></div>
+<div class="filter-box" id="filterBox"></div>
 <div class="items-box" id="itms">
 </div>`;
 
