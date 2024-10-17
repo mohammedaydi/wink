@@ -14,13 +14,16 @@
   box-shadow: -2px 0px 5px black;
   min-width: 40vw;
 }
+
 .cart-toggle {
   margin-bottom: 0.5rem;
 }
+
 .cart-toggle i {
   cursor: pointer;
   color: black;
 }
+
 .cart {
   /* background-color: blue; */
   display: flex;
@@ -31,9 +34,11 @@
   position: relative;
   height: 90%;
 }
+
 .cart-header {
   position: relative;
 }
+
 .cart-header::after {
   content: " ";
   background: linear-gradient(
@@ -61,6 +66,7 @@
 
   gap: 1rem;
 }
+
 .cart-element {
   display: flex;
   flex-direction: row;
@@ -70,12 +76,14 @@
   border-radius: 10px;
   width: 100%;
 }
+
 .cart-element h2 {
   font-size: 1.2rem;
 }
 .cart-element h3 {
   font-size: 0.8rem;
 }
+
 .cart-element h1 {
   font-size: 1.5rem;
 }
@@ -85,15 +93,18 @@
   width: 150px;
   height: 150px;
 }
+
 .cart-element__img img {
   border-radius: 10px 0px 0px 10px;
   width: 150px;
   height: 150px;
 }
+
 .cart-element__details {
   padding: 1rem 1rem;
   flex: 2;
 }
+
 .cart-element__quantity {
   padding: 0.7rem 1rem;
   flex: 1;
@@ -103,6 +114,7 @@
   justify-content: flex-start;
   gap: 1rem;
 }
+
 .cart-element__quantity_high {
   display: flex;
   flex-direction: row;
@@ -110,6 +122,7 @@
   justify-content: flex-start;
   gap: 0.7rem;
 }
+
 .cart-element__quantity_low {
   display: flex;
   justify-content: flex-end;
@@ -118,6 +131,7 @@
 .counter-manager {
   cursor: pointer;
 }
+
 .cart-checkout {
   display: flex;
   justify-content: flex-end;
@@ -126,6 +140,7 @@
   width: 100%;
   padding: 0.5rem 1rem;
 }
+
 .cart-checkout button {
   background-color: var(--blue);
   padding: 0.5rem 1rem;
@@ -135,6 +150,7 @@
   cursor: pointer;
   width: 100%;
 }
+
 .cart-element__details button {
   margin-top: 0.2rem;
   background-color: red;
@@ -145,17 +161,21 @@
   color: white;
   padding: 0.3rem 0.5rem;
 }
+
 .cart-element__details button:hover {
   background-color: transparent;
   color: black;
   border: 1px black solid;
 }
+
 .cart-checkout__total {
   padding-right: 1rem;
 }
+
 #cartTotal {
   font-size: 1.4rem;
 }
+
 @media only screen and (max-width: 420px) {
   .cart-element {
     display: flex;
@@ -166,6 +186,7 @@
     border-radius: 10px;
     width: 100%;
   }
+
   .cart-element__quantity {
     align-items: center;
   }
