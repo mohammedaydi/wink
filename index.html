@@ -23,22 +23,18 @@
     <link rel="stylesheet" type="text/css" href="./styles/item.css" />
     <link rel="stylesheet" type="text/css" href="./styles/filter.css" />
     <link rel="stylesheet" type="text/css" href="./styles/cart.css" />
-    <script type="module" src="./js/components/Navbar.js"></script>
-    <script type="module" src="./js/components/Header.js"></script>
-    <script type="module" src="./js/components/Item.js"></script>
-    <script type="module" src="./js/handlers.js"></script>
-    <script type="module" src="./js/components/Filter.js"></script>
-    <script type="module" src="./js/components/Cart.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/checkout.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/login.css" />
+    <script type="module" src="./js/handlers/handlers.js"></script>
+    <script type="module" src="./js/manager/StateManager.js"></script>
+    <script type="module" src="./js/handlers/checkoutHandler.js"></script>
+    <script type="module" src="./js/handlers/loginHandler.js"></script>
   </head>
   <body>
     <div id="overlays"></div>
     <div id="root"></div>
     <script type="module">
-      renderNavbar();
-      renderHeader();
-      initialRender();
-      renderFilter();
-      renderCart();
+      render(1);
     </script>
   </body>
 </html>

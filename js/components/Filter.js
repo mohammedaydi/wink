@@ -26,3 +26,4 @@ const renderFilter = async () => {
 };
 
 window.renderFilter = renderFilter;
+export default renderFilter;

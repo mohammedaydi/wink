@@ -1,10 +1,18 @@
 let elements = [];
+let totalPrice = 0;
+import {
+  getStorage,
+  getUser,
+  removeFromStorage,
+  updateStorage,
+} from "../data/Storage.js";
+import { fetchProducts } from "../data/product.js";
 class CartElement {
-  constructor(title, price, id, image) {
+  constructor(title, price, id, image, quantity) {
     this.title = title;
     this.price = price;
     this.id = id;
-    this.quantity = 1;
+    this.quantity = quantity;
     this.total = this.quantity * this.price;
     this.image = image;
   }
@@ -50,12 +58,42 @@ const cartsContainerToken = `<div class="cart-container" id="cart">
         </div>
         <div class="cart-checkout">
           <div class="cart-checkout__total"><h2 id="cartTotal">total: 55$</h2></div>
-          <div><button>Checkout</button></div>
+          <div><button onClick="checkoutHandler()">Checkout</button></div>
         </div>
       </div>`;
 
-const renderCart = () => {
+const renderCart = async () => {
   document.getElementById("overlays").innerHTML = cartsContainerToken;
+  //get all items
+  const storageData = getStorage();
+  const products = await fetchProducts();
+  const uid = getUser();
+  if (uid !== "0") {
+    for (var j = 0; j < storageData.length; j += 1) {
+      for (var i = 0; i < products.length; i += 1) {
+        if (products[i].id === parseInt(storageData[j].key)) {
+          if (
+            elements.filter((element) => {
+              return element.id === parseInt(storageData[j].key);
+            }).length === 0
+          ) {
+            elements.push(
+              new CartElement(
+                products[i].title,
+                products[i].price,
+                products[i].id,
+                products[i].image,
+                parseInt(storageData[j].value)
+              )
+            );
+          }
+        }
+      }
+    }
+  }
+
+  renderCartElements();
+  updateTotal();
 };
 
 const renderCartElements = () => {
@@ -65,9 +103,11 @@ const renderCartElements = () => {
       elements[i].title,
       elements[i].price,
       elements[i].id,
-      elements[i].image
+      elements[i].image,
+      elements[i].quantity
     ).cartElementToken();
   }
+  updateStorage();
 };
 
 const removeElement = (id) => {
@@ -75,14 +115,23 @@ const removeElement = (id) => {
     return ele.id !== parseInt(id);
   });
   elements = f;
+  removeFromStorage(id);
   renderCartElements();
+  updateTotal();
 };
+
 const updateTotal = () => {
   let total = 0;
   elements.forEach((element) => {
     total += element.price * element.quantity;
   });
-  document.getElementById("cartTotal").innerText = `total: ${total}$`;
+  totalPrice = total;
+  document.getElementById("cartTotal").innerText = `total: ${totalPrice}$`;
+};
+const deleteElements = () => {
+  while (elements.length != 0) {
+    elements.shift();
+  }
 };
 window.renderCart = renderCart;
 window.renderCartElements = renderCartElements;
@@ -95,4 +144,6 @@ export {
   removeElement,
   CartElement,
   updateTotal,
+  renderCart,
+  deleteElements,
 };
