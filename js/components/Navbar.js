@@ -1,11 +1,12 @@
 const navbarToken = `<div class="navbar">
         <div class="navbar-header" id="navHeader"><h1 onclick="gotoMain()">wink</h1></div>
         <div class="navbar-links" id="nbLinks">
-          <a href=""><p>Home</p></a>
-          <a href=""><p>Products</p></a>
+          <a href="#headerCont"><p>Home</p></a>
+          <a href="#itemsList"><p>Products</p></a>
           <p id="navLogin" onclick="manageLogin()">Login</p>
           <i class="fa-solid fa-cart-shopping" onClick="showCart()"></i>
         </div>
+        <div class="navbar-drawer" id="navbarDrawer"><i class="fa-solid fa-bars" onclick="toggleDrawer(true)"></i></div>
       </div>`;
 
 const renderLoginButton = (loginState) => {
@@ -26,6 +27,7 @@ const renderNavbar = (pageState, loginState) => {
     renderLoginButton(loginState);
   } else if (pageState == 2) {
     document.getElementById("nbLinks").style.display = "none";
+    document.getElementById("navbarDrawer").style.display = "none";
     document.getElementById("navHeader").style.flex = "0";
   }
 };

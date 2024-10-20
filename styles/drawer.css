@@ -1,0 +1,38 @@
+.drawer-container {
+  background-color: var(--white);
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 70vw;
+  height: 100vh;
+  padding: 20vh 0rem;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: -2px 0px 5px black;
+  z-index: 15;
+  display: none;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.drawer p {
+  color: black;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 300px) {
+  .drawer-container {
+    width: 100vw;
+  }
+}

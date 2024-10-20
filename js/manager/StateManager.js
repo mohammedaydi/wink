@@ -8,6 +8,7 @@ import renderLogin from "../components/Login.js";
 import { isLogged, logout, login } from "../data/UserState.js";
 import { getUser } from "../data/Storage.js";
 import { deleteElements } from "../components/Cart.js";
+import renderDrawer from "../components/Drawer.js";
 
 const renderMainpage = () => {
   renderNavbar(1, isLogged());
@@ -16,6 +17,7 @@ const renderMainpage = () => {
   renderFilter();
   deleteElements();
   renderCart();
+  renderDrawer();
 };
 
 const renderCheckoutpage = () => {

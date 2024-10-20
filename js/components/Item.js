@@ -37,7 +37,7 @@ class Item {
     return s;
   }
 }
-const itemsToken = `<div class="items-list">
+const itemsToken = `<div class="items-list" id="itemsList">
 <div class="filter-box" id="filterBox"></div>
 <div class="items-box" id="itms">
 </div>`;
