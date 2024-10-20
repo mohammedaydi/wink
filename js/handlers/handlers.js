@@ -51,7 +51,6 @@ const showCart = () => {
   //check local storage
 };
 const addToCart = (event) => {
-  console.log(elements);
   let ele = products.filter((prod) => {
     return prod.id == event.target.id;
   })[0];
