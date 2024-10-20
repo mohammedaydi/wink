@@ -46,8 +46,10 @@ const searchCategory = async (event) => {
 const closeCart = () => {
   document.getElementById("cart").style = "display: none;";
 };
-const showCart = () => {
+const showCart = (closeDrawer = false) => {
+  if (closeDrawer) document.getElementById("drawerCont").style.display = "none";
   document.getElementById("cart").style = "display: flex;";
+
   //check local storage
 };
 const addToCart = (event) => {
@@ -132,6 +134,14 @@ const userLogout = () => {
   render(1);
 };
 
+const toggleDrawer = (action) => {
+  if (action) {
+    document.getElementById("drawerCont").style.display = "flex";
+  } else {
+    document.getElementById("drawerCont").style.display = "none";
+  }
+};
+
 window.toggleDesc = toggleDesc;
 window.showItems = showItems;
 window.searchTitle = searchTitle;
@@ -146,3 +156,4 @@ window.checkoutHandler = checkoutHandler;
 window.gotoMain = gotoMain;
 window.gotoLogin = gotoLogin;
 window.manageLogin = manageLogin;
+window.toggleDrawer = toggleDrawer;

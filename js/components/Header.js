@@ -12,7 +12,7 @@ class Card {
     return token;
   }
 }
-const headerToken = `<header class="header">
+const headerToken = `<header class="header" id="headerCont">
         <div class="header-cards" id="headerCards">
         </div>
         <div class="header-desc">

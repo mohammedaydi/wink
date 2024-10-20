@@ -63,7 +63,7 @@ const cartsContainerToken = `<div class="cart-container" id="cart">
       </div>`;
 
 const renderCart = async () => {
-  document.getElementById("overlays").innerHTML = cartsContainerToken;
+  document.getElementById("overlays").innerHTML += cartsContainerToken;
   //get all items
   const storageData = getStorage();
   const products = await fetchProducts();

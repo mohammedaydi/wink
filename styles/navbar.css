@@ -34,6 +34,9 @@
   justify-content: space-around;
   align-items: center;
 }
+.navbar-drawer {
+  display: none;
+}
 
 .navbar-links a,
 .navbar-links p,
@@ -43,7 +46,8 @@ i {
   cursor: pointer;
   text-shadow: none;
 }
-.navbar-links i {
+.navbar-links i,
+.navbar-drawer i {
   font-size: 1.5rem;
 }
 
@@ -72,5 +76,8 @@ i {
 
   .navbar-links {
     display: none !important;
+  }
+  .navbar-drawer {
+    display: flex;
   }
 }
