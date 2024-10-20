@@ -48,3 +48,4 @@ const renderHeader = async () => {
 };
 
 window.renderHeader = renderHeader;
+export default renderHeader;

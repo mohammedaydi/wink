@@ -1,4 +1,10 @@
 .navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  z-index: 10;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -15,6 +21,11 @@
 .navbar-header {
   flex: 2;
 }
+.navbar-header h1 {
+  cursor: pointer;
+
+  width: fit-content;
+}
 
 .navbar-links {
   flex: 1;
@@ -25,10 +36,12 @@
 }
 
 .navbar-links a,
+.navbar-links p,
 i {
   text-decoration: none;
   color: white;
   cursor: pointer;
+  text-shadow: none;
 }
 .navbar-links i {
   font-size: 1.5rem;
@@ -58,6 +71,6 @@ i {
   }
 
   .navbar-links {
-    display: none;
+    display: none !important;
   }
 }

@@ -24,3 +24,4 @@ const renderFilter = () => {
 };
 
 window.renderFilter = renderFilter;
+export default renderFilter;

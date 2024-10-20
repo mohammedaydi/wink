@@ -1,12 +1,14 @@
-import { fetchProducts, products } from "./data/product.js";
-import { renderItems } from "./components/Item.js";
+import { fetchProducts, products } from "../data/product.js";
+import { renderItems } from "../components/Item.js";
+import { updateStorage } from "../data/Storage.js";
 import {
   elements,
   renderCartElements,
   removeElement,
   CartElement,
   updateTotal,
-} from "./components/Cart.js";
+} from "../components/Cart.js";
+import { getUserID, isLogged, logout } from "../data/UserState.js";
 const toggleDesc = (event) => {
   const str = event.target.id + "Desc";
   document.getElementById(str).style = "display: block;";
@@ -46,13 +48,20 @@ const closeCart = () => {
 };
 const showCart = () => {
   document.getElementById("cart").style = "display: flex;";
+  //check local storage
 };
 const addToCart = (event) => {
+  console.log(elements);
   let ele = products.filter((prod) => {
     return prod.id == event.target.id;
   })[0];
-  if (!elements.includes(ele)) {
-    elements.push(new CartElement(ele.title, ele.price, ele.id, ele.image));
+
+  if (
+    elements.filter((element) => {
+      return element.id == ele.id;
+    }).length === 0
+  ) {
+    elements.push(new CartElement(ele.title, ele.price, ele.id, ele.image, 1));
   }
 
   renderCartElements();
@@ -72,6 +81,7 @@ const decQuantity = (event) => {
     }
   }
   updateTotal();
+  updateStorage();
 };
 const incQuantity = (event) => {
   const id = "q" + event.target.id;
@@ -87,10 +97,39 @@ const incQuantity = (event) => {
     }
   }
   updateTotal();
+  updateStorage();
 };
 
 const removeE = (event) => {
   removeElement(event.target.id);
+};
+
+const checkoutHandler = () => {
+  if (getUserID() === 0) {
+    render(3);
+  } else {
+    if (elements.length !== 0) {
+      render(2);
+    }
+  }
+};
+const gotoMain = () => {
+  render(1);
+};
+
+const manageLogin = () => {
+  if (!isLogged()) {
+    gotoLogin();
+  } else {
+    userLogout();
+  }
+};
+const gotoLogin = () => {
+  render(3);
+};
+const userLogout = () => {
+  logout();
+  render(1);
 };
 
 window.toggleDesc = toggleDesc;
@@ -103,3 +142,7 @@ window.addToCart = addToCart;
 window.decQuantity = decQuantity;
 window.incQuantity = incQuantity;
 window.removeE = removeE;
+window.checkoutHandler = checkoutHandler;
+window.gotoMain = gotoMain;
+window.gotoLogin = gotoLogin;
+window.manageLogin = manageLogin;
