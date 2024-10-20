@@ -1,3 +1,4 @@
+import { fetchCategories } from "../data/product.js";
 const filterToken = `
         <div class="search-bar">
           <input
@@ -12,15 +13,16 @@ const filterToken = `
           <select name="catFilter" onChange="searchCategory(event)" id="catFilter">
             <option value="" selected disabled>Pick a category</option>
             <option value="all">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="jewelery">Jewelery</option>
-            <option value="men's clothing">Men's clothing</option>
-            <option value="women's clothing">Women's clothing</option>
           </select>
         </div>`;
 
-const renderFilter = () => {
+const renderFilter = async () => {
   document.getElementById("filterBox").innerHTML += filterToken;
+  const categories = await fetchCategories();
+  for (let i = 0; i < categories.length; i += 1) {
+    const optionToken = ` <option value="${categories[i]}">${categories[i]}</option>`;
+    document.getElementById("catFilter").innerHTML += optionToken;
+  }
 };
 
 window.renderFilter = renderFilter;

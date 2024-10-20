@@ -76,6 +76,7 @@ a {
 .card i {
   font-size: 3rem;
   color: white;
+  cursor: default;
 }
 
 #card1 {
@@ -191,6 +192,10 @@ a {
       #f1e964 90%
     );
     border: 2px var(--blue) solid;
+  }
+
+  .card i {
+    display: none;
   }
 
   #card2 {
