@@ -18,9 +18,12 @@ const removeFromStorage = (itemID) => {
 };
 const removeAllFromStorage = (userID) => {
   for (let i = 0; i < localStorage.length; i += 1) {
-    const currentUserID = localStorage.key(i).split(",")[0];
-    if (userID === parseInt(currentUserID)) {
-      localStorage.removeItem(localStorage.key(i));
+    if (localStorage.key(i).includes(",")) {
+      const currentUserID = localStorage.key(i).split(",")[0];
+      if (userID === parseInt(currentUserID)) {
+        localStorage.removeItem(localStorage.key(i));
+        i = -1;
+      }
     }
   }
 };

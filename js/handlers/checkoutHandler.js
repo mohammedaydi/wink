@@ -81,8 +81,8 @@ const validateData = (formData) => {
       document.getElementById("checkoutChecker").style.display = "flex";
       // localStorage.clear(); replace with delete for the user
       const userid = getUserID();
-      removeAllFromStorage(userid);
       deleteElements();
+      removeAllFromStorage(userid);
 
       render(1);
     }, 3000);

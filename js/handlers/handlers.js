@@ -19,6 +19,7 @@ const showItems = async (event) => {
   const rndr = products.filter((product) => {
     return product.category === event.target.id;
   });
+  document.getElementById("catFilter").value = event.target.id; // set the value of the filter
   renderItems(rndr);
 };
 
@@ -63,6 +64,10 @@ const addToCart = (event) => {
     }).length === 0
   ) {
     elements.push(new CartElement(ele.title, ele.price, ele.id, ele.image, 1));
+
+    document.getElementById("cardCount").innerText = elements.length;
+    document.getElementById(event.target.id).style = "animation: show 0.2s;";
+    // document.querySelector("");
   }
 
   renderCartElements();
@@ -103,6 +108,7 @@ const incQuantity = (event) => {
 
 const removeE = (event) => {
   removeElement(event.target.id);
+  document.getElementById("cardCount").innerText = elements.length;
 };
 
 const checkoutHandler = () => {

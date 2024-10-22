@@ -7,6 +7,15 @@
   border-radius: 20px;
 }
 
+@keyframes show {
+  from {
+    border: 0px #1ac8db solid;
+  }
+  to {
+    border: 5px #1ac8db solid;
+  }
+}
+
 .item-details__description {
   display: none;
 }

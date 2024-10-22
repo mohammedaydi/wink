@@ -91,7 +91,7 @@ const renderCart = async () => {
       }
     }
   }
-
+  document.getElementById("cardCount").innerText = elements.length;
   renderCartElements();
   updateTotal();
 };
@@ -108,6 +108,7 @@ const renderCartElements = () => {
     ).cartElementToken();
   }
   updateStorage();
+  document.getElementById("cardCount").innerText = elements.length;
 };
 
 const removeElement = (id) => {

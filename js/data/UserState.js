@@ -18,4 +18,4 @@ const isLogged = () => {
 const getUserID = () => {
   return userID;
 };
-export { login, logout, fetchUser, isLogged, getUserID };
+export { login, logout, isLogged, getUserID };
